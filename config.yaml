@@ -1,0 +1,31 @@
+document_loading:
+  predefined_paths:
+    - "E:/Edgy/AI Projects/doc-chat/doc1.txt"
+    - "E:/Edgy/AI Projects/doc-chat/doc2.pdf"
+    - "E:/Edgy/AI Projects/doc-chat/doc3.json"
+    - "E:/Edgy/AI Projects/doc-chat/doc4.csv"
+    - "E:/Edgy/AI Projects/doc-chat/doc5.py"
+  filetypes:
+    - "Text files: *.txt"
+    - "PDF files: *.pdf"
+    - "JSON files: *.json"
+    - "CSV files: *.csv"
+    - "Python files: *.py"
+    - "JavaScript files: *.js"
+    - "HTML files: *.html"
+    - "CSS files: *.css"
+    - "Java files: *.java"
+    - "C++ files: *.cpp"
+    - "C files: *.c"
+    - "Ruby files: *.rb"
+    - "PHP files: *.php"
+    - "Shell scripts: *.sh"
+llm:
+  model: "llama3"
+  token_limit: 2048
+logging:
+  level: DEBUG
+web_search:
+  api_key: "BSA0fWObRoWqALPixFw4raPLCKXpB6c"
+  count: 10
+  extra_snippets: true
