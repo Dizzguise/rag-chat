@@ -13,7 +13,7 @@ RAG-Chat is a powerful chatbot built using the LangChain library. It can decide 
 
 1. **Clone the repository**:
     ```sh
-    git clone https://github.com/yourusername/rag-chat.git
+    git clone https://github.com/Dizzguise/rag-chat.git
     cd rag-chat
     ```
 
