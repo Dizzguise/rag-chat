@@ -23,9 +23,11 @@ document_loading:
 llm:
   model: "llama3"
   token_limit: 2048
+logic_llm:
+  model: "llama3"
 logging:
   level: DEBUG
 web_search:
-  api_key: "BSA0fWObRoWqALPixFw4raPLCKXpB6c"
+  api_key: "BRAVE_API_KEY_HERE"
   count: 10
   extra_snippets: true
