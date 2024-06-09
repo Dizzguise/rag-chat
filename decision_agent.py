@@ -1,9 +1,11 @@
 import logging
 from datetime import datetime
+from langchain_community.llms import Ollama
 
 class DecisionAgent:
-    def __init__(self, llm):
+    def __init__(self, llm, logic_llm):
         self.llm = llm
+        self.logic_llm = logic_llm
 
     def decide_action(self, query):
         now = datetime.now()
@@ -19,7 +21,7 @@ class DecisionAgent:
         Your response must only be 'direct' or 'web' and nothing else. The word you choose decides if we perform a web search or not. DO NOT explain your decision.
         """
         try:
-            decision_response = self.llm.generate([decision_prompt])
+            decision_response = self.logic_llm.generate([decision_prompt])
             action = decision_response.generations[0][0].text.strip().lower()
             logging.info(f"Decision: {action}")
             return action
@@ -39,11 +41,10 @@ class DecisionAgent:
         Context: {context}
         Questions: {query}
         
-        Saying 'web' gives you access to real time data when necessary.
         Your response must only be 'direct' or 'web' and nothing else. The word you choose decides if we perform a web search or not. DO NOT explain your decision.
         """
         try:
-            decision_response = self.llm.generate([decision_prompt])
+            decision_response = self.logic_llm.generate([decision_prompt])
             action = decision_response.generations[0][0].text.strip().lower()
             logging.info(f"Decision: {action}")
             return action
@@ -66,7 +67,7 @@ class DecisionAgent:
 
         """
         try:
-            optimization_response = self.llm.generate([optimization_prompt])
+            optimization_response = self.logic_llm.generate([optimization_prompt])
             optimized_query = optimization_response.generations[0][0].text.strip()
             logging.info(f"Optimized Query: {optimized_query}")
             return optimized_query

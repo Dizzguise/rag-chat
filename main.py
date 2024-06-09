@@ -23,9 +23,10 @@ def main():
     vector_store = load_documents(config)
 
     llm = Ollama(model=config['llm']['model'])
+    logic_llm = Ollama(model=config['logic_llm']['model'])
     web_search = WebSearch(api_key=config['web_search']['api_key'], count=config['web_search']['count'], extra_snippets=config['web_search']['extra_snippets'])
     retrieval_chain = create_rag_chain(llm, vector_store) if vector_store else None
-    decision_agent = DecisionAgent(llm)
+    decision_agent = DecisionAgent(llm, logic_llm)
     query_agent = QueryAgent(vector_store) if vector_store else None
     context_agent = ContextAgent(llm, token_limit=config['llm']['token_limit'])
 

@@ -6,3 +6,4 @@ PyYAML
 faiss-cpu
 tk
 ollama
+logging
