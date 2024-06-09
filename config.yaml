@@ -26,6 +26,6 @@ llm:
 logging:
   level: DEBUG
 web_search:
-  api_key: "BSA0fWObRoWqALPixFw4raPLCKXpB6c"
+  api_key: "BRAVE_API_KEY_HERE"
   count: 10
   extra_snippets: true
