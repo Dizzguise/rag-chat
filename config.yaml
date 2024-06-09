@@ -28,6 +28,6 @@ logic_llm:
 logging:
   level: DEBUG
 web_search:
-  api_key: "BSA8KnGicYHrtl49gg4pRz1ys7d7Dlr"
+  api_key: "BRAVE_API_KEY_HERE"
   count: 10
   extra_snippets: true
